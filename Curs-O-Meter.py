@@ -9,7 +9,7 @@ print("Welcome to the Curs-O-Meter application!")
 #print("Here are the curse words we have on file so far: ")
 def textmod():
     print("Start typing whatever you want to say: ")
-    data = input()
+    data = input().lower()
     for i in possible_words:
         used_words.append(data.count(i))
         #print(used_words)
@@ -36,7 +36,7 @@ def speechmod():
         print("Speak into the machine: ")
         audio = r.listen(source)
         print("Your time has elapsed. ")
-        data = r.recognize_google(audio)
+        data = r.recognize_google(audio).lower()
         print("You said: " + data)
         for i in possible_words:
             used_words.append(data.count(i))
